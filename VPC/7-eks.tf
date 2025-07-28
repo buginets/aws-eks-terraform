@@ -8,7 +8,7 @@ resource "aws_iam_role" "eks" {
     {
        "Effect": "Allow",
        "Action": "sts:AssumeRole",
-       "Principal" {
+       "Principal": {
             "Service": "eks.amazonaws.com"
        }
     }]

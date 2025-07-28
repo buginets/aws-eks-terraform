@@ -8,7 +8,7 @@ resource "aws_iam_role" "nodes" {
     {
        "Effect": "Allow",
        "Action": "sts:AssumeRole",
-       "Principal" {
+       "Principal": {
             "Service": "ec2.amazonaws.com"
        }
     }]
@@ -46,7 +46,7 @@ resource "aws_eks_node_group" "general" {
         aws_subnet.private_zone2.id
     ]
 
-    capasity_type = "ON_DEMAND"
+    capacity_type = "ON_DEMAND"
     instance_types = ["t3.small"]
 
     scaling_config {
@@ -56,7 +56,7 @@ resource "aws_eks_node_group" "general" {
     }
 
     update_config {
-        max_unavaiable =1 
+        max_unavailable =1 
     }
 
     labels = {
